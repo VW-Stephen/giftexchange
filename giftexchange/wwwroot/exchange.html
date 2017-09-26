@@ -1,0 +1,61 @@
+﻿<div ng-controller="ExchangeController">
+    <div class="panel panel-default">
+        <h4>Information</h4>
+
+        <div class="form-group col-md-4 col-sm-12">
+            <label for="giftexchange.name">Name</label>
+            <input class="form-control" type="text" ng-model="giftexchange.name" ng-required="required" />
+        </div>
+        <div class="form-group col-md-4 col-sm-12">
+            <label for="giftexchange.description">Description</label>
+            <input class="form-control" type="text" ng-model="giftexchange.description" />
+        </div>
+        <div class="form-group col-md-4 col-sm-12">
+            <label for="giftexchange.maxPurchasePrice">Maximum Purchase Price ($)</label>
+            <input class="form-control" type="text" ng-model="giftexchange.maxPurchasePrice" />
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-primary" ng-click="update(giftexchange)">Save</button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    
+    <div class="col-xs-12 panel panel-default">
+        <h4>Participants</h4>
+        <p ng-show="giftexchange.participants.length > 1">
+            <a ng-click="shuffle()">Shuffle Assignments</a>
+        </p>
+
+        <div class="col-xs-12 panel panel-default" ng-repeat="p in giftexchange.participants">
+            <div class="form-group">
+                <div class="col-md-3 col-sm-12">
+                    <label for="p.name">Name</label>
+                    <input class="form-control" type="text" ng-model="p.name" />
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <label for="p.email">Email</label>
+                    <input class="form-control" type="text" ng-model="p.email" />
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <label for="p.giftAssignment">Gift Assignment</label>
+                    <input class="form-control" type="text" value="{{ getParticipantName(p.giftAssignmentId) }}" disabled="disabled"/>
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <div class="pull-right">
+                        <button class="btn btn-primary" ng-click="saveParticipant(p)">Save</button>
+                        <button class="btn btn-danger" ng-click="deleteParticipant(p)">Delete</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <a ng-click="addParticipant()">+ Add Participant</a>
+        </div>
+
+    </div>
+</div>

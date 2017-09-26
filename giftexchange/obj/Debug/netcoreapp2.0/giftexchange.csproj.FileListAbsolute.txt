@@ -1,0 +1,11 @@
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\bin\Debug\netcoreapp2.0\giftexchange.deps.json
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\bin\Debug\netcoreapp2.0\giftexchange.runtimeconfig.json
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\bin\Debug\netcoreapp2.0\giftexchange.runtimeconfig.dev.json
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\bin\Debug\netcoreapp2.0\giftexchange.dll
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\bin\Debug\netcoreapp2.0\giftexchange.pdb
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\obj\Debug\netcoreapp2.0\giftexchange.csprojResolveAssemblyReference.cache
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\obj\Debug\netcoreapp2.0\giftexchange.csproj.CoreCompileInputs.cache
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\obj\Debug\netcoreapp2.0\giftexchange.AssemblyInfoInputs.cache
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\obj\Debug\netcoreapp2.0\giftexchange.AssemblyInfo.cs
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\obj\Debug\netcoreapp2.0\giftexchange.dll
+C:\Users\Stephen\source\repos\giftexchange\giftexchange\obj\Debug\netcoreapp2.0\giftexchange.pdb

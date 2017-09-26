@@ -1,0 +1,73 @@
+﻿<div ng-controller="MainController">
+    <div class="row">
+        <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#newModal">+ Add Gift Exchange</a>
+        <div class="clearfix"></div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Maximum Purchase Price ($)</th>
+                <th>Participants</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="g in giftexchanges">
+                <td>
+                    <a class="btn btn-primary" ng-href="#!exchange/{{g.id}}">Edit</a>
+                </td>
+                <td>
+                    {{ g.name }}
+                </td>
+                <td>
+                    {{ g.description }}
+                </td>
+                <td>
+                    {{ g.maxPurchasePrice }}
+                </td>
+                <td>
+                    <ul ng-if="g.participants && g.participants.length > 0">
+                        <li ng-repeat="p in g.participants">{{ p.name }} ({{ p.email }})</li>
+                    </ul>
+                    <em ng-if="!g.participants || g.participants.length == 0">None</em>
+                </td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(g)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="newModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">New Gift Exchange</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="new_exchange.name">Name</label>
+                    <input class="form-control" type="text" ng-model="new_exchange.name" />
+                </div>
+                <div class="form-group">
+                    <label for="new_exchange.description">Description</label>
+                    <input class="form-control" type="text" ng-model="new_exchange.description" />
+                </div>
+                <div class="form-group">
+                    <label for="new_exchange.maxPurchasePrice">Max Purchase Price ($)</label>
+                    <input class="form-control" type="text" ng-model="new_exchange.maxPurchasePrice"/>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary pull-right" ng-click="createExchange(new_exchange)">Create</button>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
